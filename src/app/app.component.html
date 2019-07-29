@@ -1,0 +1,24 @@
+<div class="container"> 
+  <h2>Guess the Number !</h2> 
+  <p class="well lead">Guess the computer generated random
+     number between 1 and 1000.</p> 
+  <label>Your Guess: </label> 
+  <div class="col-md-3">
+  <input type="number"    [value]="guess" (input)="guess=$event.target.value"    class="form-control" /><br>
+  <button  (click)="verifyGuess()" class="btn btn-primary btn-sm">  Verify</button> &nbsp;
+  <button (click)="initializeVar()" class="btn btn-warning btn-sm">  Restart</button> 
+<div> 
+  </div>
+  <div>
+      <p *ngIf="deviation<0" class="alert alert-warning">
+          Your guess is higher.</p>
+          <p *ngIf="deviation>0" class="alert alert-warning">
+          Your guess is lower.</p>
+          <p *ngIf="deviation===0" class="alert alert-success">
+          Yes! That's it.</p> 
+        </div> 
+          <p class="text-info">No of guesses : 
+            <span class="badge">{{nooftries}}</span> 
+          </p> 
+
+  </div>
